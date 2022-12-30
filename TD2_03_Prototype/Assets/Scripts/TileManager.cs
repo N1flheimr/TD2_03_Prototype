@@ -99,6 +99,7 @@ public class TileManager : MonoBehaviour
             isDoingAction = !isDoingAction;
         }
     }
+
     public void ConnectAllTiles()
     {
         if (!isDoingAction)

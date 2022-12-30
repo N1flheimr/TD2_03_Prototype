@@ -109,14 +109,21 @@ public class PlayerController : MonoBehaviour
 
     private bool CanMove(Vector3 direction)
     {
-        if (!Physics2D.OverlapBox(targetPosition + direction, new Vector2(0.5f, 0.5f), LayerMask.GetMask("Tile")) || TileManager.Instance.GetIsDoingAction())
+        Collider2D tileCollider = Physics2D.OverlapBox(targetPosition + direction, new Vector2(0.5f, 0.5f), LayerMask.GetMask("Tile"));
+
+        if (!tileCollider || TileManager.Instance.GetIsDoingAction())
         {
             return false;
         }
-        else
+        if (tileCollider.gameObject.TryGetComponent<Tile>(out Tile tile))
         {
-            return true;
+            Debug.Log(tile.ToString());
+            if (tile.isOverlapping)
+            {
+                return false;
+            }
         }
+        return true;
     }
 
     private void StartAction()
