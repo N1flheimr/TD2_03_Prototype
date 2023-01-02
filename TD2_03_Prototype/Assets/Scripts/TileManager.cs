@@ -53,7 +53,7 @@ public class TileManager : MonoBehaviour
             canConnect = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && isDoingAction)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) && isDoingAction)
         {
             foreach (GameObject tile in connectedTileList)
             {
@@ -61,7 +61,7 @@ public class TileManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) && isDoingAction)
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) && isDoingAction)
         {
             foreach (GameObject tile in connectedTileList)
             {
