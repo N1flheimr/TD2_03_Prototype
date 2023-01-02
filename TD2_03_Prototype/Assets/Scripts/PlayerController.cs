@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private bool isConnectingTiles = false;
 
+    [SerializeField] GameObject startingTiles;
+
     [SerializeField] private Tile currentTile;
 
     public bool useHoldSpaceToConnectTile;
@@ -54,6 +56,11 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         if (isConnectingTiles)
         {
+            if (startingTiles == null)
+            {
+                startingTiles = currentTile.gameObject;
+            }
+
             if (!TileManager.Instance.connectedTileList.Contains(currentTile.gameObject))
             {
                 TileManager.Instance.connectedTileList.Add(currentTile.gameObject);
@@ -73,9 +80,10 @@ public class PlayerController : MonoBehaviour
     {
         isConnectingTiles = false;
 
-        if (!isOnGearTile || TileManager.Instance.connectedTileList.Count <= 1)
+        if (!isOnGearTile || TileManager.Instance.connectedTileList.Count <= 1 || currentTile.gameObject == startingTiles)
         {
             TileManager.Instance.connectedTileList.Clear();
+            startingTiles = null;
         }
         else
         {
@@ -122,6 +130,10 @@ public class PlayerController : MonoBehaviour
             {
                 return false;
             }
+        }
+        if (TileManager.Instance.connectedTileList.Contains(tileCollider.gameObject))
+        {
+            return false;
         }
         return true;
     }

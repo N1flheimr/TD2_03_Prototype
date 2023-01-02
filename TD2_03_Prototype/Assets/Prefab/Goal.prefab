@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 5605821104206061715}
   - component: {fileID: 5605821104206061714}
   - component: {fileID: 6738768852476224520}
+  - component: {fileID: 1652129600}
   m_Layer: 6
   m_Name: Goal
   m_TagString: Tile
@@ -322,7 +323,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5605821104206061933}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -395,6 +396,20 @@ MonoBehaviour:
   isConnected: 0
   isOverlapping: 0
   isGear: 0
+--- !u!114 &1652129600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605821104206061933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5aa769883d81a84cbc25f4d1511c1e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  sceneLoadTime: 0.2
 --- !u!1 &5605821104530168644
 GameObject:
   m_ObjectHideFlags: 0

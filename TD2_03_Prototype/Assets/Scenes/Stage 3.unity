@@ -463,6 +463,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1652129600, guid: d03fba2e87c2607479a0e79aa325212b, type: 3}
+      propertyPath: sceneName
+      value: Stage 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5605821104206061712, guid: d03fba2e87c2607479a0e79aa325212b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -600,7 +604,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 3.95
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
